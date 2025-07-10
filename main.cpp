@@ -63,10 +63,66 @@ int main()
                 std::string taskName= "";
                 std::cout<<"Enter the name of the new task: "<<std::endl;
                 std::cin>>taskName;
-                std::string taskDesc="";
+
+                std::string taskDesc= "";
                 std::cout<<"Enter the description of the task: "<<std::endl;
                 std::cin>>taskDesc;
-                add_task(taskName, taskDesc);
+                
+                while (true)
+                {
+                    std::string taskDate= "";
+                    std::cout<<"Enter the end time of the task in DD.MM.YYYY format."<<std::endl;
+                    std::cin>>taskDate;
+                    
+                    //DD
+                    if(taskDate[1] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[2] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[3] != '.')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    //MM
+                    if(taskDate[4] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[5] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[6] != '.')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    //YYYY
+                    if(taskDate[7] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[8] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[9] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                    if(taskDate[10] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                    }
+                }
+
+                std::string taskHour ="";
+                std::cout<<"Enter the end hour of the task in HH:MM format.";
+                std::cin>>taskHour;
+                add_task(taskName, taskDesc, taskDate, taskHour);
             }
             case 2:
             {
