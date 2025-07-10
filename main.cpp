@@ -5,31 +5,24 @@ struct task
 {
     std::string TaskName;
     std::string TaskDescription;
-    int TaskDate[5] = {00, 00, 0000, 00, 00};
+    int TaskEndDate[5] = {00, 00, 0000, 00, 00};
+                        //DD  MM  YYYY  HH  mm
 };
 
-task add_task(std::string TaskName, std::string TaskDesc, std::string TaskDate, std::string TaskHour)
+/*
+task add_task(std::string pTaskName, std::string pTaskDesc, std::string pTaskEndDate, std::string pTaskEndHour)
 {
     task newTask;
-    newTask.TaskName = TaskName;
-    newTask.TaskDescription = TaskDesc;
-    for(int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j > 0; j++)
-        {
-            if(TaskDate[j] != '.')
-            {
-                /*
-                    Date Format DD.MM.YYY
-                    user input example: 11.09.2025
-                    11 - DD
-                    09 - MM (MM <= 12)
-                    2025 - YYYY (YYYY > Current Year)
-                */
-            }
-        }
-    }
+    newTask.TaskName = pTaskName;
+    newTask.TaskDescription = pTaskDesc;
+    
+        //user input: 11.09.2025
+        //TED[1/2] - DD
+        //TED[4/5] - MM
+        //TED[7/8/9/10] - YYYY
+    
 }
+*/
 void list_options()
 {
     std::cout<<"Options:: " <<std::endl;
@@ -171,7 +164,7 @@ int main()
                         break;
                     }
                 }
-                add_task(taskName, taskDesc, taskDate, taskHour);
+                //add_task(taskName, taskDesc, taskDate, taskHour);
             }
             //Removing Task
             case 2:
