@@ -123,6 +123,7 @@ int main()
                     if(tmp != 0)
                     {
                         std::cout<<"Invalid character was provided, please enter once again."<<std::endl;
+                        tmp=0;
                         taskDate="";
                     }
                     else if(tmp == 0)
@@ -130,14 +131,45 @@ int main()
                         break;
                     }
                 }
-
+ 
                 std::string taskHour ="";
                 while(true)
                 {
                     std::cout<<"Enter the end hour of the task in HH:MM format.";
                     std::cin>>taskHour;
+                    unsigned char tmp;
 
-                    
+                    if(taskHour[1] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        tmp++;
+                    }
+                    else if(taskHour[2] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        tmp++;
+                    }
+                    else if(taskHour[3] != ':')
+                    {
+                        tmp++;
+                    }
+                    else if(taskHour[4] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        tmp++;
+                    }
+                    else if(taskHour[5] != '1'||'2'||'3'||'4'||'5'||'6'||'7'||'8'||'9'||'0')
+                    {
+                        tmp++;
+                    }
+
+                    if(tmp != 0)
+                    {
+                        std::cout<<"Invalid hour was provided, please enter once again."<<std::endl;
+                        tmp=0;
+                        taskHour="";
+                    }
+                    else if(tmp == 0)
+                    {
+                        break;
+                    }
                 }
                 add_task(taskName, taskDesc, taskDate, taskHour);
             }
