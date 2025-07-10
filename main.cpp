@@ -3,21 +3,34 @@
 
 struct task
 {
-    std::string taskName;
-    std::string taskDescription;
-    char EndDay;
-    char EndMonth;
-    unsigned short int EndYear;
-    bool IsTime;
-    char EndHour;
-    char EndMinute;
+    std::string TaskName;
+    std::string TaskDescription;
+    int TaskDate[5] = {00, 00, 0000, 00, 00};
 };
 
-task add_task(std::string TaskName)
+task add_task(std::string TaskName, std::string TaskDesc, std::string TaskDate, std::string TaskHour)
 {
-
+    task newTask;
+    newTask.TaskName = TaskName;
+    newTask.TaskDescription = TaskDesc;
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j > 0; j++)
+        {
+            if(TaskDate[j] != '.')
+            {
+                /*
+                    Date Format DD.MM.YYY
+                    user input example: 11.09.2025
+                    11 - DD
+                    09 - MM (MM <= 12)
+                    2025 - YYYY (YYYY > Current Year)
+                */
+            }
+        }
+    }
 }
-void list_tasks()
+void list_options()
 {
     std::cout<<"Options:: " <<std::endl;
     std::cout<<"0-Exit" <<std::endl;
@@ -32,7 +45,7 @@ int main()
 {
     while (true)
     {
-        list_tasks();
+        list_options();
         
         char opt = 0;
         std::cout<<"Choose one of the options above: ";
@@ -48,8 +61,12 @@ int main()
             case 1:
             {
                 std::string taskName= "";
+                std::cout<<"Enter the name of the new task: "<<std::endl;
                 std::cin>>taskName;
-                add_task(taskName);
+                std::string taskDesc="";
+                std::cout<<"Enter the description of the task: "<<std::endl;
+                std::cin>>taskDesc;
+                add_task(taskName, taskDesc);
             }
             case 2:
             {
