@@ -9,20 +9,6 @@ struct task
                         //DD  MM  YYYY  HH  mm
 };
 
-/*
-task add_task(std::string pTaskName, std::string pTaskDesc, std::string pTaskEndDate, std::string pTaskEndHour)
-{
-    task newTask;
-    newTask.TaskName = pTaskName;
-    newTask.TaskDescription = pTaskDesc;
-    
-        //user input: 11.09.2025
-        //TED[1/2] - DD
-        //TED[4/5] - MM
-        //TED[7/8/9/10] - YYYY
-    
-}
-*/
 void list_options()
 {
     std::cout<<"Options:: " <<std::endl;
@@ -55,13 +41,11 @@ int main()
             //Adding Task
             case 1:
             {
-                std::string taskName= "";
+                task NewTask;
                 std::cout<<"Enter the name of the new task: "<<std::endl;
-                std::cin>>taskName;
-
-                std::string taskDesc= "";
+                std::cin>>NewTask.TaskName;
                 std::cout<<"Enter the description of the task: "<<std::endl;
-                std::cin>>taskDesc;
+                std::cin>>NewTask.TaskDescription;
 
                 std::string taskDate= "";
                 while (true)
@@ -121,6 +105,7 @@ int main()
                     }
                     else if(tmp == 0)
                     {
+
                         break;
                     }
                 }
@@ -161,6 +146,7 @@ int main()
                     }
                     else if(tmp == 0)
                     {
+
                         break;
                     }
                 }
